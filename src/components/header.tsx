@@ -1,17 +1,17 @@
 import React, { ReactElement } from "react";
-import Logo from "./logo";
+import Logo from "src/components/icons/logo";
 import styled from "@emotion/styled";
-import { GoGrabber } from "react-icons/go";
-import Hambuger from "./hambuger";
+// import { GoGrabber } from "react-icons/go";
+import Hambuger from "src/components/icons/hambuger";
 
 interface Props {}
 
 const Navbar = styled.div`
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--white);
   position: fixed;
   width: 100%;
   z-index: 100;
-  background: #000;
+  background: var(--bg);
 
   .hambuger {
     padding: 20px;
@@ -31,7 +31,7 @@ const Navbar = styled.div`
       right: 0;
       top: 0;
       padding: 15px;
-      border-left: 1px solid #fff;
+      border-left: 1px solid var(--white);
       cursor: pointer;
     }
   }

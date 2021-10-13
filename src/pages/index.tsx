@@ -3,7 +3,7 @@ import Head from "next/head";
 import Contents from "src/components/card";
 import styled from "@emotion/styled";
 import React from "react";
-import Logo from "src/components/logo";
+import Logo from "src/components/icons/logo";
 import Header from "src/components/header";
 
 const Wrapper = styled.div`
@@ -13,6 +13,17 @@ const Wrapper = styled.div`
   main {
     margin: 0 22px;
     /* padding: 0 12px; */
+    @media (min-width: 580px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around;
+    }
+    @media (min-width: 1024px) {
+      display: grid;
+      gap: 2rem 1rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 `;
 
