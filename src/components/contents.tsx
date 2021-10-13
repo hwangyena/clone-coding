@@ -13,7 +13,7 @@ const MainWrapper = styled.main`
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 1024px) {
-    gap: 0.5rem;
+    gap: 1rem;
     /* display: flex;
       justify-content: space-around; */
     grid-template-columns: repeat(4, 1fr);
@@ -21,52 +21,55 @@ const MainWrapper = styled.main`
   .item {
     /* width: 100%; */
     margin-top: 1.8rem;
-    padding: 0 0 5rem;
+    padding: 0 0 16%;
     border-bottom: 1px solid var(--white);
+    font-size: 4vw;
 
     .image-section {
       cursor: pointer;
       position: relative;
+      font-size: inherit;
 
       .image {
         width: 100%;
-        aspect-ratio: 517 / 654;
+        aspect-ratio: 515 / 654;
         border: 1px solid var(--white);
+        /* @media (min-width: 580px) {
+          aspect-ratio: 290 / 403;
+        } */
       }
-      .button {
+      .sub-title {
         position: absolute;
-        top: 1.1rem;
-        right: 1.3rem;
+        top: 0.8em;
+        right: 1em;
         font-family: "Merriweather", serif;
         background: #f6f6f6;
         border: 1px solid var(--bg);
         border-radius: 50px;
         cursor: auto;
-        font-size: 1.3rem;
-        /* padding: 0.8rem 1.4rem; */
         color: var(--bg);
+        padding: 2% 4%;
         font-weight: 700;
+        text-transform: uppercase;
+
+        @media (min-width: 580px) {
+          font-size: 0.5em;
+        }
+        @media (min-width: 1024px) {
+          padding: 3% 8%;
+          font-size: 0.3em;
+        }
       }
     }
     .title {
-      margin: 1.1rem 0 0;
-      font-size: 2rem;
+      margin: 2% 0 0;
+      font-size: 1.6em;
       font-family: "Bebas Neue", cursive;
-    }
-
-    @media (min-width: 1024px) {
-      /* width: 23.5%; */
-      /* flex: 1; */
-      .image-section {
-        .button {
-          /* font-size: 1rem; */
-          /* padding: 1.11rem 2.8rem 1.1rem; */
-          top: 1.2rem;
-          right: 1.8rem;
-        }
+      @media (min-width: 580px) {
+        font-size: 1em;
       }
-      .title {
-        font-size: 1.5rem;
+      @media (min-width: 1024px) {
+        font-size: 0.5em;
       }
     }
   }
@@ -80,14 +83,16 @@ const Contents = (props: Props) => {
         <article className="item" key={v.id}>
           <div className="image-section">
             <img src={v.image} alt="content" className="image" />
-            <div className="button">
-              {`RELEASES - ${v.release}`}
+            <div className="sub-title">
+              {`${v.subtitle} - ${v.release}`}
               {/* Release -
                 {v.release} */}
               {/* <div className="date">{v.release}</div> */}
             </div>
           </div>
-          <a className="title">{v.title}</a>
+          <div className="title">
+            <a>{v.title}</a>
+          </div>
         </article>
       ))}
     </MainWrapper>

@@ -23,7 +23,6 @@ font-family: 'Merriweather', serif;
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #191919;
     color: #fff;
-    font-size: 20v;
   }
   * {
     box-sizing: border-box;
