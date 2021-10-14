@@ -13,6 +13,7 @@ font-family: 'Merriweather', serif;
   :root {
     --bg: #191919;
     --white: #f6f6f6;
+    --hover-color: #fec333;
     --gap: 1.5rem;
   }
 

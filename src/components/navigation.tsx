@@ -8,7 +8,10 @@ interface Props {}
 
 const Navbar = styled.div`
   --fix-top: 18px;
+  --fix-main-top: 1rem;
   --fix-right: 86px;
+  --main-font: 1.05rem;
+
   border-bottom: 1px solid var(--white);
   position: fixed;
   left: 0;
@@ -17,6 +20,8 @@ const Navbar = styled.div`
   z-index: 10;
   height: 55px;
   background: var(--bg);
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
 
   .logo {
     display: inline-block;
@@ -24,17 +29,64 @@ const Navbar = styled.div`
     width: 100px;
     left: var(--gap);
     top: 20px;
+    cursor: pointer;
   }
+  .main-menu {
+    position: fixed;
+    padding: 0;
+    top: 0.8rem;
+    /* top: calc(var(--fix-main-top)-5) rem; */
+    left: 15rem;
+    text-transform: uppercase; /*대문자*/
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      margin: 0;
+      li {
+        list-style: none;
+        font-size: var(--main-font);
+        cursor: pointer;
+      }
+      #curture {
+        border-radius: 50px;
+        border: 1px solid var(--white);
+        span {
+          padding: 0.2rem 0.9rem;
+        }
+      }
+    }
+  }
+  .menu-acc-wish {
+    position: fixed;
+    top: var(--fix-main-top);
+    font-size: var(--main-font);
+    right: 15rem;
+    cursor: pointer;
+    & span:first-child {
+      margin-right: 3rem;
+    }
+  }
+
   .menu-search-bag {
     position: fixed;
     top: var(--fix-top);
     right: var(--fix-right);
-    /* font-size: 0.3rem; */
     font-size: 12.1px;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
     & span:first-child {
       margin-right: 16px;
+      cursor: pointer;
+    }
+    @media (min-width: 1024px) {
+      top: var(--fix-main-top);
+      cursor: pointer;
+      right: var(--gap);
+      font-size: var(--main-font);
+
+      & span:first-child {
+        margin-right: 3rem;
+      }
     }
   }
   .hambuger {
@@ -47,30 +99,44 @@ const Navbar = styled.div`
     align-items: center;
     justify-content: center;
     border-left: 1px solid var(--white);
-    cursor: pointer;
   }
-  .navbar {
-    display: none;
+
+  .main-menu > ul > li,
+  .menu-acc-wish > span,
+  .menu-search-bag > span {
+    &:not(#curture) {
+      &:hover {
+        color: var(--hover-color);
+        transition: color 0.2s ease-out;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .navbar,
+    .main-menu,
+    .menu-acc-wish {
+      display: none;
+    }
+    .hambuger {
+      visibility: visible;
+    }
   }
 
   @media (min-width: 1024px) {
-    height: 4rem;
+    height: 3.7rem;
     .logo {
-      top: 1.5rem;
+      top: 1.4rem;
       width: 9rem;
     }
-    .hambuger {
-      display: none;
-      visibility: hidden;
-    }
-    .navbar {
+    .navbar,
+    .main-menu,
+    .menu-acc-wish {
       display: block;
     }
-    .menu-search-bag {
-      display: none;
-    }
     .hambuger {
-      display: none;
+      /* display: none; */
+      visibility: hidden;
     }
   }
 `;
@@ -82,6 +148,22 @@ function Navigation({}: Props): ReactElement {
         <span className="logo">
           <Logo />
         </span>
+        <nav className="main-menu">
+          <ul>
+            <li>Lanches</li>
+            <li>Sneakers</li>
+            <li>Apparel</li>
+            <li>Kids</li>
+            <li>Accessories</li>
+            <li id="curture">
+              <span>Curture</span>
+            </li>
+          </ul>
+        </nav>
+        <div className="menu-acc-wish">
+          <span>Account</span>
+          <span>WishList (0)</span>
+        </div>
         <div className="menu-search-bag">
           <span>SEARCH</span>
           <span>BAG (0)</span>
@@ -89,10 +171,6 @@ function Navigation({}: Props): ReactElement {
         <div className="hambuger">
           <Hambuger size="24" />
         </div>
-
-        {/* <div className="navbar">
-          <Logo width="100px" />
-        </div> */}
       </Navbar>
     </>
   );
