@@ -105,9 +105,9 @@ const Navbar = styled.div`
   .menu-acc-wish > span,
   .menu-search-bag > span {
     &:not(#curture) {
+      transition: color 0.2s ease-out;
       &:hover {
         color: var(--hover-color);
-        transition: color 0.2s ease-out;
       }
     }
   }

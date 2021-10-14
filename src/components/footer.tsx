@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import Logo from "src/icons/logo";
 
 const Wrapper = styled.footer``;
 interface Props {}
@@ -7,7 +8,7 @@ interface Props {}
 const Footer = (props: Props) => {
   return (
     <Wrapper>
-      {/* <footer>
+      <footer>
         <div className="top">
           <div className="left">
             <h3>JOIN OUR COMMUNITY</h3>
@@ -22,7 +23,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <img src="" alt="logo" />
-        <Logo width="100px"/>
+        <Logo />
 
         <div className="bottom">
           <span>2021 JACK LEMKUS - ALL RIGHTS RESERVED</span>
@@ -32,7 +33,7 @@ const Footer = (props: Props) => {
             <span>FACEBOOK</span>
           </div>
         </div>
-      </footer> */}
+      </footer>
     </Wrapper>
   );
 };

@@ -14,6 +14,7 @@ font-family: 'Merriweather', serif;
     --bg: #191919;
     --white: #f6f6f6;
     --hover-color: #fec333;
+    --gray: #b7b7b7;
     --gap: 1.5rem;
   }
 

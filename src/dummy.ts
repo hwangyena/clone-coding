@@ -95,4 +95,84 @@ export const dummy = [
     title: "CONVERSE X NBA JAM",
     subtitle: "Releases",
   },
+  {
+    id: 13,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-NIKE-DUNK-SB-TV-SIGNAL-CZ2253-100.jpg?v=1629713395",
+    release: "23.08.21",
+    title: 'NIKE SB CUNK HIGH PRO "TV SIGNAL"',
+    subtitle: "Releases",
+  },
+  {
+    id: 14,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/2-Air-Jordan-1-Feature-517x654.jpg?v=1626720388",
+    release: "14.05.21",
+    title: "AIR JORDAN I: THE LEGACY OF A LEGEND",
+    subtitle: "Sole k",
+  },
+  {
+    id: 15,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-AIR-MAX-TAILWIND-OG.jpg?v=1629380152",
+    release: "19.08.21",
+    title: "THROWBACK: AIR MAX TAILWIND IV FT ROLO ROZAY",
+    subtitle: "campaigns",
+  },
+  {
+    id: 16,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-DASKAPITAL-LEMKUS.png?v=1628936536",
+    release: "14.08.21",
+    title: "OBSCURE ARCHIVES | DAS KAPITAL",
+    subtitle: "interviews",
+  },
+  {
+    id: 17,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-LEMKUS-AJ1-SEAFOAM.jpg?v=1628777948",
+    release: "12.08.21",
+    title: 'W AIR JORDAN | RETRO HIGH OG "SEAFOAM"',
+    subtitle: "releases",
+  },
+  {
+    id: 18,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-AIR-MAX-2090-LEMKUS.jpg?v=1628767973",
+    release: "12.08.21",
+    title: "THROWBACK: AIR MAX 2090",
+    subtitle: "campaigns",
+  },
+  {
+    id: 19,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-RIYANA-GUDGALRIRI-LEMKUS-BLOG.png?v=1628453842",
+    release: "08.08.21",
+    title: "RIYANA'S SNEAKER VAULT",
+    subtitle: "interviews",
+  },
+  {
+    id: 20,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-AIR-MAX-720-LEMKUS.jpg?v=1628073747",
+    release: "04.08.21",
+    title: 'THROWBACK: AIR MAX 720 "AIR BAGGED"',
+    subtitle: "campaigns",
+  },
+  {
+    id: 21,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-Reebok-Camping-Pack-LEMKUS.jpg?v=1627986308",
+    release: "03.08.21",
+    title: "REEBOK CAMPING PACK FT.DWSON",
+    subtitle: "campaigns",
+  },
+  {
+    id: 22,
+    image:
+      "https://cdn.shopify.com/s/files/1/0538/9280/8895/articles/517x654-NIKE-AIR-MAX-21-LEMKUS.jpg?v=1627639785",
+    release: "30.07.21",
+    title: "NIKE AIR MAX 2021. THE FUTURE OF AIR IS HERE",
+    subtitle: "releases",
+  },
 ];
