@@ -11,13 +11,15 @@ const Navbar = styled.div`
   --fix-right: 86px;
   border-bottom: 1px solid var(--white);
   position: fixed;
+  left: 0;
+  top: 0;
   width: 100vw;
   z-index: 10;
   height: 55px;
   background: var(--bg);
 
   .logo {
-    display: flex;
+    display: inline-block;
     position: fixed;
     width: 100px;
     left: var(--gap);
@@ -52,18 +54,18 @@ const Navbar = styled.div`
   }
 
   @media (min-width: 1024px) {
-    height: 1rem;
+    height: 4rem;
     .logo {
-      top: 0.35rem;
-      width: 2.3rem;
+      top: 1.5rem;
+      width: 9rem;
     }
-    /* .hambuger {
+    .hambuger {
       display: none;
       visibility: hidden;
     }
     .navbar {
       display: block;
-    } */
+    }
     .menu-search-bag {
       display: none;
     }
@@ -80,7 +82,6 @@ function Navigation({}: Props): ReactElement {
         <span className="logo">
           <Logo />
         </span>
-        {/* hambuger */}
         <div className="menu-search-bag">
           <span>SEARCH</span>
           <span>BAG (0)</span>

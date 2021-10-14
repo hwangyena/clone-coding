@@ -13,18 +13,21 @@ font-family: 'Merriweather', serif;
   :root {
     --bg: #191919;
     --white: #f6f6f6;
-    --gap: 0.4rem;
+    --gap: 1.5rem;
   }
 
   html,
   body {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #191919;
     color: #fff;
-    font-size: 4vw;
+    font-size: 2.7vw;
+  }
+  body {
+    margin: 0 var(--gap);
   }
   * {
     box-sizing: border-box;
@@ -35,6 +38,18 @@ font-family: 'Merriweather', serif;
   ::-webkit-scrollbar {
     webkit-appearance: none;
     width: 0;
+  }
+  @media (min-width: 580px) {
+    html,
+    body {
+      font-size: 1.5vw;
+    }
+  }
+  @media (min-width: 1024px) {
+    html,
+    body {
+      font-size: 1vw;
+    }
   }
 `;
 
