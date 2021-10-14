@@ -20,21 +20,46 @@ const Wrapper = styled.div`
     width: 18.2rem;
     height: 3.9rem;
     font-size: 1.6rem;
-    /* &:hover {
-      background: red;
-    } */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
 
     .static {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .hover {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
       opacity: 1;
     }
-    :hover {
-      .hover {
+    .hover {
+      opacity: 0;
+      animation: marquee 10s infinite linear;
+      white-space: nowrap;
+
+      &::after {
+        content: attr(data-hover);
+      }
+    }
+    &:hover {
+      .static {
         opacity: 0;
+      }
+      .hover {
+        opacity: 1;
+      }
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
       }
     }
   }
@@ -53,9 +78,13 @@ const Search = (props: Props) => {
     <Wrapper>
       <button className="button">
         <span className="static">FILTER SEARCH</span>
-        {/* <span className="hover">
-          FILTER SEARCH FILTER SEARCH FILFTER SEARCH
-        </span> */}
+        <span
+          className="hover"
+          data-hover="FILTER SEARCH &nbsp;&nbsp;&nbsp;&nbsp; FILTER SEARCH"
+        >
+          FILTER SEARCH &nbsp;&nbsp;&nbsp;&nbsp; FILTER SEARCH
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
       </button>
     </Wrapper>
   );
