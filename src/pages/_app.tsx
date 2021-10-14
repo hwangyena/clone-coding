@@ -13,6 +13,7 @@ font-family: 'Merriweather', serif;
   :root {
     --bg: #191919;
     --white: #f6f6f6;
+    --gap: 0.4rem;
   }
 
   html,
@@ -23,9 +24,17 @@ font-family: 'Merriweather', serif;
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #191919;
     color: #fff;
+    font-size: 4vw;
   }
   * {
     box-sizing: border-box;
+  }
+  span {
+    display: inline-block;
+  }
+  ::-webkit-scrollbar {
+    webkit-appearance: none;
+    width: 0;
   }
 `;
 

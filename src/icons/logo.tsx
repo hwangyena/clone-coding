@@ -1,17 +1,12 @@
 import React from "react";
 
-interface Props {
-  width?: string;
-}
-
-const Logo = ({ width }: Props) => {
+const Logo = () => {
   return (
     <svg
       id="Large_Logo"
       data-name="Large Logo"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1314 178.2"
-      width={width ? width : ""}
     >
       <path
         fill="#fdfbf5"

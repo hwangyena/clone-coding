@@ -6,24 +6,25 @@ const MainWrapper = styled.main`
   margin: 0 22px;
   display: grid;
   @media (min-width: 580px) {
+    margin: 0 0.5rem;
     /* display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around; */
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+    gap: var(--gap);
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 1024px) {
-    gap: 1rem;
+    margin: 0 0.5rem;
+    gap: var(--gap);
     /* display: flex;
       justify-content: space-around; */
     grid-template-columns: repeat(4, 1fr);
   }
   .item {
-    /* width: 100%; */
-    margin-top: 1.8rem;
+    margin-top: 1rem;
     padding: 0 0 16%;
     border-bottom: 1px solid var(--white);
-    font-size: 4vw;
+    /* font-size: 4vw; */
 
     .image-section {
       cursor: pointer;
@@ -53,11 +54,11 @@ const MainWrapper = styled.main`
         text-transform: uppercase;
 
         @media (min-width: 580px) {
-          font-size: 0.5em;
+          font-size: 0.5rem;
         }
         @media (min-width: 1024px) {
           padding: 3% 8%;
-          font-size: 0.3em;
+          font-size: 0.3rem;
         }
       }
     }
@@ -83,12 +84,7 @@ const Contents = (props: Props) => {
         <article className="item" key={v.id}>
           <div className="image-section">
             <img src={v.image} alt="content" className="image" />
-            <div className="sub-title">
-              {`${v.subtitle} - ${v.release}`}
-              {/* Release -
-                {v.release} */}
-              {/* <div className="date">{v.release}</div> */}
-            </div>
+            <div className="sub-title">{`${v.subtitle} - ${v.release}`}</div>
           </div>
           <div className="title">
             <a>{v.title}</a>
