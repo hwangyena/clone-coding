@@ -6,50 +6,114 @@ import { validateEmail } from "src/common/function";
 import Validation from "./validation";
 
 const Wrapper = styled.footer`
-  ul {
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans", sans-serif;
-    font-weight: lighter;
-    li {
-      list-style: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  padding: 0 0 2rem;
+
+  .container {
+    display: grid;
+    grid-template-areas:
+      "join join"
+      "us order"
+      "policy sns"
+      "logo logo"
+      "rights rigths";
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: ; */
+
+    .item-join {
+      grid-area: join;
+      margin-bottom: 3rem;
+      .title {
+        font-family: "Bebas Neue", cursive;
+        font-size: 2.6rem;
+        margin: 0 0 0.8rem;
+      }
+      .input-email {
+        position: relative;
+        display: flex;
+        align-self: center;
+        width: 60rem;
+
+        input {
+          width: 100%;
+          font-family: "Merriweather", serif;
+          background: var(--bg);
+          color: var(--white);
+          border: 1.5px solid #000;
+          line-height: 35px;
+          font-size: 16px;
+          font-weight: 200;
+          padding-left: 16px;
+          &::placeholder {
+            color: var(--white);
+          }
+          &:focus {
+            outline: none;
+            box-shadow: var(--hover-color) 0px 0px 5px;
+          }
+        }
+        &.validate {
+          input {
+            border: 1.5px solid var(--warning) !important;
+          }
+        }
+      }
     }
-  }
-  .input-email {
-    position: relative;
-    input {
-      font-family: "Merriweather", serif;
-      background: var(--bg);
-      color: var(--white);
-      border: 1.5px solid #000;
-      line-height: 35px;
-      font-size: 16px;
-      font-weight: 200;
-      padding-left: 16px;
-      &::placeholder {
-        color: var(--white);
-      }
-      &:focus {
-        /* background: red; */
-        outline: none;
-        box-shadow: var(--hover-color) 0px 0px 5px;
+    .item-us {
+      grid-area: us;
+    }
+    .item-order {
+      grid-area: order;
+    }
+    .item-policy {
+      grid-area: policy;
+    }
+    .item-sns {
+      grid-area: sns;
+    }
+    .item-logo {
+      grid-area: logo;
+      padding: 6rem 0 3rem;
+    }
+    .item-rights {
+      grid-area: rights;
+      grid-column: 1 / 3;
+    }
+    .item-policy,
+    .item-order,
+    .item-us,
+    .item-sns,
+    .item-rights {
+      font-size: 14px;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style: none;
+        }
+        span {
+          cursor: pointer;
+          margin-bottom: 0.7rem;
+        }
       }
     }
-    &.validate {
-      input {
-        border: 1.5px solid var(--warning) !important;
-      }
+
+    .item-policy,
+    .item-sns {
+      margin: 17px 0 0;
     }
   }
 
-  @media (min-width: 580px) and (max-width: 1023px) {
-  }
   @media (min-width: 1024px) {
+    transition: border 0.2s ease-out;
     margin: 4.8rem 0 0;
     padding: 3rem 0 2rem;
 
     .container {
-      display: grid;
       grid-template-areas:
         "join us policy order"
         "logo logo logo logo"
@@ -57,37 +121,42 @@ const Wrapper = styled.footer`
       grid-template-columns: 5fr repeat(3, 1fr);
       grid-template-rows: auto auto auto;
       grid-auto-flow: row;
-      /* grid-template-columns: repeat(3,); */
       .item-join {
-        margin: 0 0 4rem;
         .title {
-          font-family: "Bebas Neue", cursive;
-
           font-size: 2rem;
-          /* line-height: 5rem; */
-          margin: 0 0 0.8rem;
         }
         .input-email {
           width: 16rem;
-          display: flex;
-          align-self: center;
-          input {
-            width: 100%;
+        }
+      }
+      .item-policy,
+      .item-order,
+      .item-us,
+      .item-sns,
+      .item-rights {
+        font-size: 0.8rem;
+        margin: 0;
+        ul > li > span {
+          margin-bottom: 0.5rem;
+          transition: border 0.2s ease-out;
+          border: 1px solid transparent;
+          border-radius: 50px;
+          padding: 0.1px 0.4rem;
+          &:hover {
+            border: 1px solid var(--white);
           }
         }
       }
-      .item-policy {
-      }
-      .item-order {
-      }
       .item-logo {
-        grid-column: 1 / span 4;
-      }
-      .item-rigths {
+        padding: 3rem 0 5rem;
+        cursor: pointer;
       }
       .item-sns {
-        grid-column: 3/5;
         justify-self: flex-end;
+        ul > li {
+          margin-left: 1.5rem;
+          display: inline-block;
+        }
       }
     }
   }
@@ -125,35 +194,61 @@ const Footer = (props: Props) => {
         </div>
         <div className="item-us">
           <ul>
-            <li>{`ABOUT US`}</li>
-            <li>{`FAQ`}</li>
-            <li>{`CONTACK US`}</li>
+            <li>
+              <span>{`ABOUT US`}</span>
+            </li>
+            <li>
+              <span>{`FAQ`}</span>
+            </li>
+            <li>
+              <span>{`CONTACK US`}</span>
+            </li>
           </ul>
         </div>
         <div className="item-policy">
           <ul>
-            <li>{`Provacy policy`}</li>
-            <li>{`celivery policy`}</li>
-            <li>{`terms of use`}</li>
+            <li>
+              <span>{`Privacy policy`}</span>
+            </li>
+            <li>
+              <span>{`celivery policy`}</span>
+            </li>
+            <li>
+              <span>{`terms of use`}</span>
+            </li>
           </ul>
         </div>
         <div className="item-order">
           <ul>
-            <li>{`How to order`}</li>
-            <li>{`Track your order`}</li>
-            <li>{`Return & Exchanges`}</li>
+            <li>
+              <span>{`How to order`}</span>
+            </li>
+            <li>
+              <span>{`Track your order`}</span>
+            </li>
+            <li>
+              <span>{`Return & Exchanges`}</span>
+            </li>
           </ul>
         </div>
         <div className="item-logo">
           <Logo />
         </div>
         <div className="item-rights">
-          <span>2021 JACK LEMKUS - ALL RIGHTS RESERVED</span>
+          <span>© 2021 JACK LEMKUS - ALL RIGHTS RESERVED</span>
         </div>
         <div className="item-sns">
-          <span>INSTAGRAM</span>
-          <span>TWITTER</span>
-          <span>FACEBOOK</span>
+          <ul>
+            <li>
+              <span>INSTAGRAM</span>
+            </li>
+            <li>
+              <span>TWITTER</span>
+            </li>
+            <li>
+              <span>FACEBOOK</span>
+            </li>
+          </ul>
         </div>
       </div>
     </Wrapper>
