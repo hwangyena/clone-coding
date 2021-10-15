@@ -4,7 +4,6 @@ import Logo from "src/icons/logo";
 import cn from "classnames";
 import { validateEmail } from "src/common/function";
 import Validation from "./validation";
-import { debounce } from "lodash";
 
 const Wrapper = styled.footer`
   font-family: "Open Sans", sans-serif;
@@ -172,13 +171,9 @@ const Footer = (props: Props) => {
     /** email 확인 */
     e && setInput(e?.target.value);
     if (focus && input.length === 0) return;
-    const a = debounce(() => {
-      validateEmail(e ? e.target.value : input)
-        ? setIsEmail(false)
-        : setIsEmail(true);
-      console.count();
-    }, 5000);
-    a();
+    validateEmail(e ? e.target.value : input)
+      ? setIsEmail(false)
+      : setIsEmail(true);
   };
 
   return (
