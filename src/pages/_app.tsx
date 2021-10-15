@@ -4,7 +4,7 @@ import React from "react";
 import Head from "next/head";
 
 const GlobalStyles = css`
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;500;600;700;800&family=Merriweather:wght@200;300;400;700;900&display=swap");
   /* 
   font-family: 'Bebas Neue', cursive;
 font-family: 'Open Sans', sans-serif;
@@ -15,6 +15,8 @@ font-family: 'Merriweather', serif;
     --white: #f6f6f6;
     --hover-color: #fec333;
     --gray: #b7b7b7;
+    --warning: rgb(208, 51, 31);
+    --warning-bg: rgb(248, 236, 233);
     --gap: 1.5rem;
   }
 
