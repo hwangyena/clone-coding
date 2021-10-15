@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   font-size: 2vw;
-
+  margin: 0 var(--gap);
   .button {
     cursor: pointer;
     background: var(--white);

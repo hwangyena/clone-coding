@@ -6,6 +6,7 @@ import Link from "next/link";
 import cn from "classnames";
 
 const MainWrapper = styled.main`
+  margin: 0 var(--gap);
   .layout {
     display: grid;
 

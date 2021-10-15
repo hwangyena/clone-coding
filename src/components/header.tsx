@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { SetState } from "src/types";
 import Navigation from "./navigation";
 import Search from "./search";
 
@@ -8,12 +9,11 @@ const Wrapper = styled.header`
     padding-top: 75px;
   }
 `;
-interface Props {}
 
-const Header = (props: Props) => {
+const Header = ({ setMenuVisible }: { setMenuVisible: SetState<boolean> }) => {
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation setMenuVisible={setMenuVisible} />
       <Search />
     </Wrapper>
   );

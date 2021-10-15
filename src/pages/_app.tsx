@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { Global, css } from "@emotion/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 
 const GlobalStyles = css`
@@ -30,9 +30,6 @@ font-family: 'Merriweather', serif;
     color: #fff;
     font-size: 2.7vw;
   }
-  body {
-    margin: 0 var(--gap);
-  }
   * {
     box-sizing: border-box;
   }
@@ -54,10 +51,19 @@ font-family: 'Merriweather', serif;
     body {
       font-size: 1vw;
     }
+    body {
+      margin: 0 var(--gap);
+    }
   }
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    return () => {
+      console.count();
+      document.body.removeAttribute("style");
+    };
+  });
   return (
     <>
       <Head>

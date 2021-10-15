@@ -1,16 +1,12 @@
 import React from "react";
 
-interface Props {
-  size?: string;
-}
-
-const Hambuger = ({ size }: Props) => {
+const Hambuger = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
-      width={size ? size : "16"}
-      height={size ? size : "16"}
+      width="24"
+      height="24"
     >
       <path
         fill="#fdfbf5"

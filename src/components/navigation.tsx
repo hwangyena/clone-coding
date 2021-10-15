@@ -1,10 +1,8 @@
 import React, { ReactElement } from "react";
 import Logo from "src/icons/logo";
 import styled from "@emotion/styled";
-// import { GoGrabber } from "react-icons/go";
 import Hambuger from "src/icons/hambuger";
-
-interface Props {}
+import { SetState } from "src/types";
 
 const Navbar = styled.div`
   --fix-top: 18px;
@@ -12,12 +10,12 @@ const Navbar = styled.div`
   --fix-right: 86px;
   --main-font: 1.05rem;
 
+  z-index: 100;
   border-bottom: 1px solid var(--white);
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
-  z-index: 10;
   height: 55px;
   background: var(--bg);
   font-weight: 600;
@@ -141,7 +139,22 @@ const Navbar = styled.div`
   }
 `;
 
-function Navigation({}: Props): ReactElement {
+function Navigation({
+  setMenuVisible,
+}: {
+  setMenuVisible: SetState<boolean>;
+}): ReactElement {
+  const onHambuger = () => {
+    setMenuVisible((prev) => {
+      if (!prev) {
+        document.body.setAttribute("style", "overflow:hidden");
+      } else {
+        document.body.removeAttribute("style");
+      }
+      return !prev;
+    });
+  };
+
   return (
     <>
       <Navbar>
@@ -168,8 +181,8 @@ function Navigation({}: Props): ReactElement {
           <span>SEARCH</span>
           <span>BAG (0)</span>
         </div>
-        <div className="hambuger">
-          <Hambuger size="24" />
+        <div className="hambuger" onClick={onHambuger}>
+          <Hambuger />
         </div>
       </Navbar>
     </>
