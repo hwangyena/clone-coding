@@ -69,10 +69,14 @@ const MainWrapper = styled.main`
 
   .page-position {
     font-family: "Bebas Neue", cursive;
+    margin: 4rem 0;
     .page {
+      padding: 0.8rem 0;
       border: 1px solid var(--white);
       border-radius: 50px;
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 1.5rem;
       a {
         background: none;
@@ -80,7 +84,7 @@ const MainWrapper = styled.main`
         font-family: "Merriweather", serif;
         text-decoration: none;
         border: 0;
-        font-size: 1.6rem;
+        font-size: 2rem;
         cursor: pointer;
         transition: color 0.3s ease-out;
         &.current {
@@ -93,7 +97,7 @@ const MainWrapper = styled.main`
     }
   }
 
-  @media (min-width: 580px) and (max-width: 1024px) {
+  @media (min-width: 580px) and (max-width: 1023px) {
     .layout {
       margin-top: 21px;
       gap: var(--gap);
@@ -132,6 +136,9 @@ const MainWrapper = styled.main`
       justify-content: flex-end;
       .page {
         padding: 0.5rem 1.8rem;
+        a {
+          font-size: 1.6rem;
+        }
       }
     }
   }
@@ -148,12 +155,6 @@ const Contents = ({ current, setCurrent, pageSize }: Props) => {
     (current - 1) * 12 + 12
   );
   const page = Array.from({ length: pageSize }, (_, i) => i + 1);
-
-  const onButton = (e: MouseEvent<HTMLElement>) => {
-    const name = (e.target as HTMLInputElement).name;
-    // const name = e.target.name;
-    console.log(name);
-  };
 
   return (
     <MainWrapper>
@@ -176,13 +177,7 @@ const Contents = ({ current, setCurrent, pageSize }: Props) => {
         <div className="page">
           {page.map((v) => (
             <Link key={v} href={{ query: { page: v } }} passHref>
-              <a
-                // name={String(v)}
-                className={cn({ current: Number(v) === current })}
-                // onClick={(e) => onButton(e)}
-              >
-                {v}
-              </a>
+              <a className={cn({ current: Number(v) === current })}>{v}</a>
             </Link>
           ))}
         </div>

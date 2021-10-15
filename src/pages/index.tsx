@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     const { page } = router.query;
 
     setPageSize(Math.floor(data.length / 12) + 1);
-    setCurrent(Number(page));
+    page && setCurrent(Number(page));
   }, [data, router]);
 
   return (

@@ -35,7 +35,6 @@ const Navbar = styled.div`
     position: fixed;
     padding: 0;
     top: 0.8rem;
-    /* top: calc(var(--fix-main-top)-5) rem; */
     left: 15rem;
     text-transform: uppercase; /*대문자*/
     ul {
@@ -78,17 +77,8 @@ const Navbar = styled.div`
       margin-right: 16px;
       cursor: pointer;
     }
-    @media (min-width: 1024px) {
-      top: var(--fix-main-top);
-      cursor: pointer;
-      right: var(--gap);
-      font-size: var(--main-font);
-
-      & span:first-child {
-        margin-right: 3rem;
-      }
-    }
   }
+
   .hambuger {
     position: fixed;
     right: 0;
@@ -137,6 +127,16 @@ const Navbar = styled.div`
     .hambuger {
       /* display: none; */
       visibility: hidden;
+    }
+    .menu-search-bag {
+      top: var(--fix-main-top);
+      cursor: pointer;
+      right: var(--gap);
+      font-size: var(--main-font);
+
+      & span:first-child {
+        margin-right: 3rem;
+      }
     }
   }
 `;
